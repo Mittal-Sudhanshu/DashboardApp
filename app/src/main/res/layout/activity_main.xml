@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <!-- Auto layout, variables, and unit scale are not yet supported -->
+    <RelativeLayout
+        android:id="@+id/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="124dp"
+
+        android:layout_marginBottom="44sp"
+        android:background="#0E6FFF" >
+        <!-- Auto layout, variables, and unit scale are not yet supported -->
+        <TextView
+            android:id="@+id/dashboard"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="16sp"
+            android:layout_marginTop="40sp"
+            android:text="@string/dashboard"
+            android:textAppearance="@style/dashboard"
+            android:lineSpacingExtra="-5sp"
+            android:gravity="center_vertical"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-52sp"
+        android:id="@+id/text"
+        android:layout_below="@id/navbar"
+        android:background="@drawable/rounded_corner">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16sp"
+            android:layout_marginTop="32sp"
+            android:layout_marginEnd="32sp"
+
+            android:id="@+id/gm"
+            android:text="@string/good_morning"
+            android:textSize="24sp" />
+        <TextView
+            android:id="@+id/ajay_manva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gm"
+            android:layout_marginStart="16sp"
+            android:text="@string/ajay_manva"
+            android:textAppearance="@style/ajay_manva"
+            android:lineSpacingExtra="3sp"
+            android:gravity="center_vertical"
+            />
+    </RelativeLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="24sp"
+            android:id="@+id/frame_6"
+            android:layout_marginBottom="20sp"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="10sp"
+            android:layout_marginHorizontal="16sp"
+            app:cardElevation="8sp"
+            android:layout_below="@id/text"
+            android:layout_height="200dp">
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/idGraphView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/topEvents"
+
+            android:layout_below="@id/frame_6"
+            android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:id="@+id/recView1"
+                android:layout_marginBottom="16sp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/all_rounded_corners"
+            android:layout_marginBottom="20sp"
+            android:id="@+id/analButton"
+            android:clickable="true"
+
+            android:layout_marginHorizontal="16sp"
+            android:elevation="4sp"
+            android:layout_below="@id/topEvents"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="24sp"
+                android:layout_height="24sp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/img_1"
+
+                android:layout_toLeftOf="@id/viewAnal"
+                android:layout_marginHorizontal="12sp"/>
+
+            <TextView
+                android:id="@+id/viewAnal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="View Analytics"
+                android:textAppearance="@style/value" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="20sp"
+            android:id="@+id/buttonView"
+            android:layout_marginHorizontal="16sp"
+            android:layout_below="@id/analButton"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top Links"
+                android:id="@+id/toplinksBtn"
+                android:textColor="#ffffff"
+                android:layout_marginRight="24sp"
+                android:paddingHorizontal="16sp"
+                android:background="@drawable/button1_bg"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/toplinksBtn"
+                android:layout_centerInParent="true"
+                android:textSize="16sp"
+                android:text="Recent Links"/>
+            
+            <androidx.cardview.widget.CardView
+                android:layout_width="40sp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="5sp"
+                android:layout_height="40dp"
+                android:background="@android:drawable/ic_menu_search"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="28sp"
+            android:layout_below="@id/buttonView"
+            android:id="@+id/topLinksView"
+            android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:itemCount="4"
+            tools:listitem="@layout/links_view_card"
+            android:id="@+id/recView2"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/all_rounded_corners"
+            android:layout_marginBottom="20sp"
+            android:id="@+id/ViewAllLinks"
+            android:clickable="true"
+            android:layout_marginHorizontal="16sp"
+            android:elevation="4sp"
+            android:layout_below="@id/topLinksView"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="24sp"
+                android:layout_height="24sp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/img_3"
+
+                android:layout_toLeftOf="@id/ViewAllLink"
+                android:layout_marginHorizontal="12sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View all Links"
+                android:id="@+id/ViewAllLink"
+                android:textAppearance="@style/value"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

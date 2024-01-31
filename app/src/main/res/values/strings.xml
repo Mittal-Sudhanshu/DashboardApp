@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">openinapp</string>
+    <string name="dashboard">
+Dashboard
+</string>
+    <string name="ajay_manva">
+Ajay Manva 👋
+</string>
+    <string name="good_morning">Good Morning</string>
+</resources>
